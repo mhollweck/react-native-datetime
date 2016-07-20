@@ -13,12 +13,13 @@ import java.util.ArrayList;
 import android.app.Activity;
 
 public class RCTDateTimePickerPackage implements ReactPackage {
-
+	
     private Activity activity;
 	private RCTDateTimePicker mModuleInstance;
 
-	public RCTDateTimePickerPackage() {
+	public RCTDateTimePickerPackage(Activity activity) {
 		super();
+        this.activity = activity;
 	}
 
     @Override
@@ -26,7 +27,7 @@ public class RCTDateTimePickerPackage implements ReactPackage {
                                 ReactApplicationContext reactContext) {
       List<NativeModule> modules = new ArrayList<>();
 
-      modules.add(new RCTDateTimePicker(reactContext));
+      modules.add(new RCTDateTimePicker(reactContext, activity));
 
       return modules;
     }
