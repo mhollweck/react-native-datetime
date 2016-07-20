@@ -36,7 +36,7 @@ export default class DateTimePicker extends Component {
     }
 
     showDatePicker(date, callback) {
-        this.callback = callback;
+        this.callback = callback || this.props.onDateChange;
         date = (date || new Date());
 
         this.setState({
@@ -47,7 +47,7 @@ export default class DateTimePicker extends Component {
     }
 
     showTimePicker(date, callback) {
-        this.callback = callback;
+        this.callback = callback || this.props.onDateChange;
         date = (date || new Date());
 
         this.setState({
@@ -58,7 +58,7 @@ export default class DateTimePicker extends Component {
     }
 
     showDateTimePicker(date, callback) {
-        this.callback = callback;
+        this.callback = callback || this.props.onDateChange;
         date = (date || new Date());
 
         this.setState({
